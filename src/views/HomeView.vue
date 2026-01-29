@@ -1,14 +1,17 @@
 <script setup>
-// Tidak ada import Navbar/Footer lagi!
+// HAPUS import NavbarSection dan FooterSection dari sini
 import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
-import ReviewSection from '@/components/ReviewSection.vue'
+import LogbookSection from '@/components/LogbookSection.vue'
+import ProductSection from '@/components/ProductSection.vue'
 </script>
 
 <template>
-  <div>
+  <main class="min-h-screen bg-base-100">
     <HeroSection />
-    <AboutSection /> 
-    <ReviewSection />
-  </div>
-</template>
+    <AboutSection />
+    <LogbookSection />
+    <ProductSection />
+  </main>
+
+  </template>
