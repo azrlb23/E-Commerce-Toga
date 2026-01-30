@@ -1,5 +1,51 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
+// Import Store Cart (Langkah 2 nanti)
+import { useCartStore } from '@/stores/cart'
+
+const cartStore = useCartStore()
+
+// DATA DUMMY (Nantinya ini bisa diambil dari Database/API)
+const products = ref([
+  {
+    id: 1,
+    name: 'Bibit Jahe Merah',
+    latin: 'Zingiber officinale var. rubrum',
+    price: 15000,
+    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500&auto=format&fit=crop',
+    tag: 'Terlaris'
+  },
+  {
+    id: 2,
+    name: 'Simplisia Kunyit',
+    latin: 'Curcuma longa',
+    price: 25000,
+    image: 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=600&auto=format&fit=crop',
+    tag: null
+  },
+  {
+    id: 3,
+    name: 'Temulawak',
+    latin: 'Curcuma zanthorrhiza',
+    price: 20000,
+    image: 'https://images.unsplash.com/photo-1603431777782-912e3b76f60d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    tag: 'Baru'
+  },
+  {
+    id: 4,
+    name: 'Daun Sirih',
+    latin: 'Piper betle',
+    price: 12000,
+    image: 'https://images.unsplash.com/photo-1667889244750-6d5246c84bb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJldGVsJTIwbGVhZnxlbnwwfHwwfHx8MA%3D%3D   ',
+    tag: null
+  }
+])
+
+// Format Rupiah
+const formatRupiah = (number) => {
+  return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number)
+}
 </script>
 
 <template>
@@ -24,79 +70,29 @@ import { RouterLink } from 'vue-router'
 
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           
-          <div class="card bg-[#F4F7F5] hover:bg-white border border-transparent hover:border-[#354F38]/10 transition-all duration-300 hover:shadow-xl rounded-[24px] overflow-hidden group">
+          <div 
+            v-for="product in products" 
+            :key="product.id"
+            class="card bg-[#F4F7F5] hover:bg-white border border-transparent hover:border-[#354F38]/10 transition-all duration-300 hover:shadow-xl rounded-[24px] overflow-hidden group"
+          >
             <figure class="px-4 pt-4 relative">
               <div class="w-full aspect-square rounded-[20px] overflow-hidden bg-white">
-                <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500&auto=format&fit=crop" alt="Jahe Merah" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <img :src="product.image" :alt="product.name" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               </div>
-              <div class="absolute top-6 right-6 bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold text-[#354F38] shadow-sm">
-                TERLARIS
+              <div v-if="product.tag" class="absolute top-6 right-6 bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-bold text-[#354F38] shadow-sm">
+                {{ product.tag }}
               </div>
             </figure>
             
             <div class="card-body p-5 text-center">
-              <h2 class="text-lg font-bold text-[#1F291F] group-hover:text-[#354F38] transition-colors">Bibit Jahe Merah</h2>
-              <p class="text-gray-500 text-sm mb-3">Zingiber officinale var. rubrum</p>
-              <p class="text-[#354F38] font-bold text-lg mb-4">Rp 15.000</p>
+              <h2 class="text-lg font-bold text-[#1F291F] group-hover:text-[#354F38] transition-colors">{{ product.name }}</h2>
+              <p class="text-gray-500 text-sm mb-3 italic">{{ product.latin }}</p>
+              <p class="text-[#354F38] font-bold text-lg mb-4">{{ formatRupiah(product.price) }}</p>
               <div class="card-actions justify-center">
-                <button class="btn bg-[#354F38] hover:bg-[#263a29] text-white border-none rounded-full w-full shadow-md hover:shadow-[#354F38]/30 min-h-0 h-10 text-sm">
-                  + Keranjang
-                </button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="card bg-[#F4F7F5] hover:bg-white border border-transparent hover:border-[#354F38]/10 transition-all duration-300 hover:shadow-xl rounded-[24px] overflow-hidden group">
-            <figure class="px-4 pt-4 relative">
-              <div class="w-full aspect-square rounded-[20px] overflow-hidden bg-white">
-                <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=500&auto=format&fit=crop" alt="Kunyit" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              </div>
-            </figure>
-            
-            <div class="card-body p-5 text-center">
-              <h2 class="text-lg font-bold text-[#1F291F] group-hover:text-[#354F38] transition-colors">Simplisia Kunyit</h2>
-              <p class="text-gray-500 text-sm mb-3">Curcuma longa</p>
-              <p class="text-[#354F38] font-bold text-lg mb-4">Rp 25.000</p>
-              <div class="card-actions justify-center">
-                <button class="btn bg-[#354F38] hover:bg-[#263a29] text-white border-none rounded-full w-full shadow-md hover:shadow-[#354F38]/30 min-h-0 h-10 text-sm">
-                  + Keranjang
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card bg-[#F4F7F5] hover:bg-white border border-transparent hover:border-[#354F38]/10 transition-all duration-300 hover:shadow-xl rounded-[24px] overflow-hidden group">
-            <figure class="px-4 pt-4 relative">
-              <div class="w-full aspect-square rounded-[20px] overflow-hidden bg-white">
-                <img src="https://images.unsplash.com/photo-1603431777782-912e3b76f60d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Temulawak" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              </div>
-            </figure>
-            
-            <div class="card-body p-5 text-center">
-              <h2 class="text-lg font-bold text-[#1F291F] group-hover:text-[#354F38] transition-colors">Temulawak</h2>
-              <p class="text-gray-500 text-sm mb-3">Curcuma zanthorrhiza</p>
-              <p class="text-[#354F38] font-bold text-lg mb-4">Rp 20.000</p>
-              <div class="card-actions justify-center">
-                <button class="btn bg-[#354F38] hover:bg-[#263a29] text-white border-none rounded-full w-full shadow-md hover:shadow-[#354F38]/30 min-h-0 h-10 text-sm">
-                  + Keranjang
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card bg-[#F4F7F5] hover:bg-white border border-transparent hover:border-[#354F38]/10 transition-all duration-300 hover:shadow-xl rounded-[24px] overflow-hidden group">
-            <figure class="px-4 pt-4 relative">
-              <div class="w-full aspect-square rounded-[20px] overflow-hidden bg-white">
-                 <img src="https://images.unsplash.com/photo-1649667220513-fdbae0066f27?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sirih Merah" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              </div>
-            </figure>
-            
-            <div class="card-body p-5 text-center">
-              <h2 class="text-lg font-bold text-[#1F291F] group-hover:text-[#354F38] transition-colors">Daun Sirih</h2>
-              <p class="text-gray-500 text-sm mb-3">Piper betle</p>
-              <p class="text-[#354F38] font-bold text-lg mb-4">Rp 12.000</p>
-              <div class="card-actions justify-center">
-                <button class="btn bg-[#354F38] hover:bg-[#263a29] text-white border-none rounded-full w-full shadow-md hover:shadow-[#354F38]/30 min-h-0 h-10 text-sm">
+                <button 
+                  @click="cartStore.addToCart(product)"
+                  class="btn bg-[#354F38] hover:bg-[#263a29] text-white border-none rounded-full w-full shadow-md hover:shadow-[#354F38]/30 min-h-0 h-10 text-sm"
+                >
                   + Keranjang
                 </button>
               </div>

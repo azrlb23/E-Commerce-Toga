@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+
+const showReviewModal = ref(false)
 </script>
 
 <template>
@@ -16,7 +18,7 @@ import { ref } from 'vue'
              <div class="w-full max-w-sm lg:max-w-md aspect-[4/5] relative z-10 overflow-hidden rounded-[32px] shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1620901433789-1d2f85a93653?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                  alt="Petani Toga Lokal" 
+                  alt="Petani Toga" 
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#1F291F]/60 to-transparent opacity-60"></div>
@@ -29,12 +31,7 @@ import { ref } from 'vue'
 
              <div class="absolute top-8 -right-4 w-full h-full max-w-sm lg:max-w-md border-2 border-[#354F38]/20 rounded-[32px] -z-0 hidden md:block"></div>
              
-             <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-[#F4F7F5] rounded-full flex items-center justify-center z-20 shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#354F38]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
              </div>
-          </div>
 
           <div class="flex-1 w-full text-center lg:text-left">
              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#354F38]/10 text-[#354F38] mb-5">
@@ -92,9 +89,7 @@ import { ref } from 'vue'
 
             <div class="group h-full">
                 <div class="bg-[#354F38] rounded-[24px] p-8 h-full flex flex-col items-center text-center lg:items-start lg:text-left shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden border border-[#354F38]">
-                    
                     <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -mr-10 -mt-10"></div>
-
                     <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm border border-white/10">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -120,7 +115,6 @@ import { ref } from 'vue'
                     </p>
                 </div>
             </div>
-            
         </div>
 
       </div>
