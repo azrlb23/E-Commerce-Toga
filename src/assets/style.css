@@ -9,9 +9,11 @@
 }
 
 @theme {
-  --font-potta: 'Potta One', cursive;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-market: 'Market Deco', sans-serif;
+  /* Mengganti font bawaan 'font-sans' dengan Pilihan Anda */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Mengganti font bawaan 'font-serif' dengan Rekomendasi Saya */
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
 }
 
 @layer base {
@@ -34,4 +36,33 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans); /* Default font pakai Jakarta Sans */
+  background-color: #F4F7F5; /* Background global default */
+  color: #1F291F; /* Warna teks default (Hitam Kehijauan) */
+}
+
+/* Opsional: Kustomisasi Scrollbar agar sesuai tema Army Green */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F7F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #354F38; /* Warna Army Green */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #263a29;
 }

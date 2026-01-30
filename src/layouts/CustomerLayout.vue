@@ -6,11 +6,11 @@ import ToastNotification from '@/components/ToastNotification.vue'
 </script>
 
 <template>
-  <div class="min-h-screen w-full bg-[#FFF6E0] flex flex-col font-sans text-[#3E2723]">
+  <div class="min-h-screen w-full bg-white flex flex-col font-sans text-[#1F291F]">
     
     <NavbarSection />
 
-    <main class="flex-grow pt-20 md:pt-24 lg:pt-28 w-full">
+    <main class="flex-grow w-full">
       
       <RouterView v-slot="{ Component }">
         <Transition name="page" mode="out-in">
