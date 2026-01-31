@@ -11,13 +11,11 @@ import ToastNotification from '@/components/ToastNotification.vue'
     <NavbarSection />
 
     <main class="flex-grow w-full">
-      
       <RouterView v-slot="{ Component }">
         <Transition name="page" mode="out-in">
           <component :is="Component" />
         </Transition>
       </RouterView>
-
     </main>
 
     <FooterSection />
@@ -28,7 +26,7 @@ import ToastNotification from '@/components/ToastNotification.vue'
 </template>
 
 <style scoped>
-/* Transisi Halaman Global */
+/* Style tetap sama */
 .page-enter-active, .page-leave-active { transition: opacity 0.4s ease, transform 0.4s ease; }
 .page-enter-from { opacity: 0; transform: translateY(10px); }
 .page-leave-to { opacity: 0; transform: translateY(-10px); }

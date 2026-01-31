@@ -1,7 +1,5 @@
 <script setup>
-import { ref } from 'vue'
 
-const showReviewModal = ref(false)
 </script>
 
 <template>
@@ -50,12 +48,21 @@ const showReviewModal = ref(false)
              </p>
 
              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                <button 
-                  @click="showReviewModal = true"
-                  class="btn bg-[#354F38] hover:bg-[#263a29] text-white border-none rounded-full px-6 shadow-lg hover:shadow-[#354F38]/30 min-h-0 h-11"
+                <a 
+                  href="#testimonials"
+                  class="btn bg-[#354F38] hover:bg-[#263a29] text-white border-none rounded-full px-6 shadow-lg hover:shadow-[#354F38]/30 min-h-0 h-11 flex items-center"
                 >
                   Lihat Kata Mereka
-                </button>
+                </a>
+
+                <a 
+                  href="https://wa.me/6281234567890?text=Halo%20TogaWorld,%20saya%20tertarik%20menjadi%20mitra%20petani."
+                  target="_blank"
+                  class="btn btn-outline border-[#354F38] text-[#354F38] hover:bg-[#354F38] hover:text-white rounded-full px-6 min-h-0 h-11"
+                >
+                  Hubungi Kami
+                </a>
+
                 <div class="flex items-center gap-3 px-2">
                    <div class="flex -space-x-3">
                       <img class="w-9 h-9 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=1" alt="User" />
@@ -118,6 +125,6 @@ const showReviewModal = ref(false)
         </div>
 
       </div>
-      <ReviewModal :is-open="showReviewModal" @close="showReviewModal = false" />
+
     </section>
 </template>
