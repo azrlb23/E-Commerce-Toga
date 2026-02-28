@@ -41,7 +41,7 @@
              </h2>
              
              <p class="text-gray-600 leading-relaxed mb-5 text-base lg:text-lg font-medium">
-               TogaWorld lahir dari keresahan sederhana: betapa sulitnya menemukan tanaman obat asli yang berkualitas di tengah hiruk pikuk kota. 
+               Asta Eleuthera lahir dari keresahan sederhana: betapa sulitnya menemukan tanaman obat asli yang berkualitas di tengah hiruk pikuk kota. 
              </p>
              <p class="text-gray-600 leading-relaxed mb-8 text-sm lg:text-base">
                Kami bukan sekadar toko tanaman. Kami adalah komunitas yang percaya bahwa kesehatan terbaik dimulai dari kebun sendiri. Kami bermitra langsung dengan petani lokal untuk memastikan setiap bibit yang sampai ke tangan Anda adalah bibit terbaik yang dirawat dengan hati.
@@ -56,7 +56,7 @@
                 </a>
 
                 <a 
-                  href="https://wa.me/6281234567890?text=Halo%20TogaWorld,%20saya%20tertarik%20menjadi%20mitra%20petani."
+                  href="https://wa.me/6281234567890?text=Halo%20Asta%20Eleuthera,%20saya%20tertarik%20menjadi%20mitra%20petani."
                   target="_blank"
                   class="btn btn-outline border-[#354F38] text-[#354F38] hover:bg-[#354F38] hover:text-white rounded-full px-6 min-h-0 h-11"
                 >

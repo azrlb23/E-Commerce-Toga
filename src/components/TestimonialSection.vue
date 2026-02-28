@@ -23,7 +23,7 @@ const testimonials = ref([
     name: "Dr. Rahmat",
     role: "Praktisi Kesehatan",
     avatar: "https://i.pravatar.cc/100?img=3",
-    content: "Simplisia yang dijual TogaWorld sangat bersih dan berkualitas. Saya sering rekomendasikan ke pasien untuk pendamping terapi.",
+    content: "Simplisia yang dijual Asta Eleuthera sangat bersih dan berkualitas. Saya sering rekomendasikan ke pasien untuk pendamping terapi.",
     rating: 4
   }
 ])

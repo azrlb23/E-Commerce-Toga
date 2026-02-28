@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import logo from '@/assets/logo.svg'
 
 // State untuk newsletter
 const email = ref('')
@@ -56,8 +55,8 @@ const handleSubscribe = () => {
         
         <div class="space-y-6">
           <RouterLink to="/" class="flex items-center gap-3 group w-max">
-            <img :src="logo" alt="Logo TogaWorld" class="h-10 w-10 brightness-0 invert group-hover:rotate-12 transition-transform" />
-            <span class="text-2xl font-serif font-bold tracking-wide">TogaWorld</span>
+            <img src="/images/AE1.png" alt="Logo Asta Eleuthera" class="h-12 w-auto brightness-0 invert group-hover:rotate-12 transition-transform" />
+            <span class="text-2xl font-serif font-bold tracking-wide">Asta Eleuthera</span>
           </RouterLink>
           <p class="text-gray-300 leading-relaxed text-sm">
             Platform e-commerce terpercaya yang menghubungkan Anda dengan petani lokal untuk menyediakan bibit tanaman obat keluarga (TOGA) berkualitas tinggi.
@@ -105,11 +104,11 @@ const handleSubscribe = () => {
                 </a>
              </li>
              <li>
-                <a href="mailto:hello@togaworld.id" class="flex items-center gap-3 text-gray-300 hover:text-white group">
+                <a href="mailto:hello@astaeleuthera.id" class="flex items-center gap-3 text-gray-300 hover:text-white group">
                   <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                   </div>
-                  <span>hello@togaworld.id</span>
+                  <span>hello@astaeleuthera.id</span>
                 </a>
              </li>
            </ul>
@@ -134,7 +133,7 @@ const handleSubscribe = () => {
       </div>
 
       <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4">
-        <p>&copy; 2026 TogaWorld Indonesia. All rights reserved.</p>
+        <p>&copy; 2026 Asta Eleuthera Indonesia. All rights reserved.</p>
         <div class="flex gap-6">
            <RouterLink to="/terms" class="hover:text-white transition-colors">Syarat & Ketentuan</RouterLink>
            <RouterLink to="/privacy" class="hover:text-white transition-colors">Kebijakan Privasi</RouterLink>

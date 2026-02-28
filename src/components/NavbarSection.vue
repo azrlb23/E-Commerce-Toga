@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import logo from '@/assets/logo.svg' 
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const isScrolled = ref(false)
@@ -43,8 +42,8 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           </div>
           
           <RouterLink to="/" class="btn btn-ghost text-xl font-bold flex items-center gap-2 hover:bg-transparent px-2">
-            <img :src="logo" alt="Logo" class="h-9 w-9" />
-            <span class="text-[#354F38] font-serif tracking-wide hidden sm:inline">TogaWorld</span>
+            <img src="/images/AE1.png" alt="Logo Asta Eleuthera" class="h-12 w-auto" />
+            <span class="text-[#354F38] font-serif tracking-wide hidden sm:inline">Asta Eleuthera</span>
           </RouterLink>
         </div>
 
